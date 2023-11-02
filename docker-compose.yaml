@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  calc-api:
+    image: carlosdibaya/lbg-grad-compose-api
+    build: ./calculator-api
+    ports:
+    - target: 8080
+      published: 8080
+  front-a:
+    image: carlosdibaya/lbg-grad-compose-front-a
+    build:
+      context: ./frontend-1
+    ports:
+      - target: 80
+        published: 80
+  front-b:
+    image: carlosdibaya/lbg-grad-compose-front-b
+    build:
+      context: ./frontend-2
+    ports:
+      - target: 80
+        published: 81
+
